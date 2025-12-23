@@ -22,6 +22,7 @@ int main() {
 	}
 
 	for (int i = 0; i < human; i++) {
+		// 배열 접근
 		int age = *(ages + i);
 
 		if (age < 9) {
@@ -34,16 +35,6 @@ int main() {
 			total = total + senior;
 		}
 	}
-
-
-	/*cout << ages;
-	cout << '\n';
-	cout << &ages;
-	cout << '\n';
-	cout << &human;
-	cout << '\n';
-	cout << &test;*/
-
 
 	cout << human << "분의 총 요금은 " << total << "원 입니다\n";
 	delete[] ages;  // free heap memory
