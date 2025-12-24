@@ -30,5 +30,6 @@ int main()
 
     s.setName("Lee Inha");
     cout << "Student Name : " << s.getName();
+    
     return 0;
 }
