@@ -109,7 +109,7 @@ public:
 
 
 int main() {
-    Pokemon p3;
+    // Pokemon p3; // 추상 클래스 객체는 생성 불가
 
     Charizard c("리자몽", 15, 60);
     Pikachu p1("피카츄", 10, 35);
