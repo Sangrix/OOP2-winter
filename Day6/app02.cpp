@@ -26,7 +26,8 @@ class Pokemon {
             cout << "HP   : " << hp << endl;
         }
 
-        void attack() const {
+       // virtual 여부에 따라, 부모 클래스의 attack이 나갈지, 자식 클래스의 attack이 나갈지
+        virtual void attack() const {
             cout << name << "이(가) 기본 공격 시전!" << endl;
         }
 
@@ -36,6 +37,7 @@ class Pokemon {
             cout << name << "이(가) 레벨업! (Lv. " << level << ")" << endl;
         }
 };
+
 
 class Charizard : public Pokemon {
     public:
@@ -51,6 +53,7 @@ class Charizard : public Pokemon {
         cout << name << "이(가) 화염방사!" << endl;
     }
 };
+
 
 class Pikachu : public Pokemon {
     public:
@@ -85,6 +88,7 @@ class Squirtle : public Pokemon {
             cout << name << "이(가) 물대포!" << endl;
         }
 };
+
 
 int main() {
     Charizard c("리자몽", 15, 60);
