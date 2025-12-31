@@ -24,5 +24,6 @@ int main() {
 	// uds.warn(); //ambiguous
 	uds.DormitoryStudent::warn();
 
+
 	return 0;
 }
