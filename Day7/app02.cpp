@@ -3,10 +3,12 @@
 using namespace std;
 
 class Complex {
-public:
+private:
 	int realNumber;
 	int imaginary;
+	friend ostream& operator<<(ostream& out, const Complex& right);
 
+public:
 	Complex(int realNumber, int imaginary) : realNumber(realNumber), imaginary(imaginary) {
 
 	}
@@ -36,10 +38,10 @@ public:
 	}
 };
 
-// 일반 함수 (멤버함수가 아닌 경우)
-Complex operator+(const Complex& left, const Complex& right) {
-	return Complex(left.realNumber + right.realNumber, left.imaginary + right.imaginary);
-}
+//// 일반 함수 (멤버함수가 아닌 경우)
+//Complex operator+(const Complex& left, const Complex& right) {
+//	return Complex(left.realNumber + right.realNumber, left.imaginary + right.imaginary);
+//}
 
 ostream& operator<<(ostream& out, const Complex& right) {
 	//out 객체를 하나 만듦
@@ -66,7 +68,7 @@ int main() {
 	*/
 
 	Complex c1(9, 7);
-	cout << c1.realNumber << "+" << c1.imaginary << "i\n";
+	// cout << c1.realNumber << "+" << c1.imaginary << "i\n";
 	cout << c1;
 
 	return 0;
