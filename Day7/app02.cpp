@@ -41,8 +41,15 @@ Complex operator+(const Complex& left, const Complex& right) {
 	return Complex(left.realNumber + right.realNumber, left.imaginary + right.imaginary);
 }
 
+ostream& operator<<(ostream& out, const Complex& right) {
+	//out °´Ã¼¸¦ ÇÏ³ª ¸¸µê
+	out << right.realNumber << "+" << right.imaginary << "i\n";
+	
+	return out;
+}
+
 int main() {
-	Complex c1(9, 7);
+	/* Complex c1(9, 7);
 	Complex c2(1, 4);
 	Complex c3 = c1 + c2;
 	// Complex c3 = operator+(c1, c2);	
@@ -56,6 +63,11 @@ int main() {
 	Complex c4 = c3++;
 	cout << c3.realNumber << "+" << c3.imaginary << "i\n";
 	cout << c4.realNumber << "+" << c4.imaginary << "i\n";
+	*/
+
+	Complex c1(9, 7);
+	cout << c1.realNumber << "+" << c1.imaginary << "i\n";
+	cout << c1;
 
 	return 0;
 }
