@@ -11,17 +11,23 @@ public:
 
 	}
 
-	// 연산자의 왼쪽은 실행 타임의 객체 주소로 관리, 오른쪽은 right 매개변수
-	Complex operator+(Complex right) {
-		return Complex(this->realNumber + right.realNumber, this->imaginary + right.imaginary);
-	}
+	//// 연산자의 왼쪽은 실행 타임의 객체 주소로 관리, 오른쪽은 right 매개변수
+	//Complex operator+(Complex right) {
+	//	return Complex(this->realNumber + right.realNumber, this->imaginary + right.imaginary);
+	//}
 };
+
+// 일반 함수 (멤버함수가 아닌 경우)
+Complex operator+(Complex left, Complex right) {
+	return Complex(left.realNumber + right.realNumber, left.imaginary + right.imaginary);
+}
 
 int main() {
 	Complex c1(9, 7);
 	Complex c2(1, 4);
-	// Complex c3 = c1 + c2;
-	Complex c3 = c1.operator+(c2);
+	Complex c3 = c1 + c2;
+	Complex c3 = operator+(c1, c2);	
+	// Complex c3 = c1.operator+(c2);
 
 	cout << c3.realNumber << "+" << c3.imaginary << "i\n";
 
