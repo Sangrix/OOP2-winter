@@ -9,7 +9,7 @@ int main() {
 	char str2[] = "J";
 	
 	// 문자열 비교
-	// 비교해서 같으면 0, 다르면 1 또는 -1
+	// ascii 비교해서 같으면 0, str1 < str2 : -1, str1 > str2 : 1
 	if (strcmp(str1, str2) == 0) {
 		cout << "같다" << endl;
 		cout << strcmp(str1, str2) << endl;
