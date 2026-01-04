@@ -42,6 +42,7 @@ int main() {
 
 	//원본이 Dog 타입인데, 원본 타입이 아닌 다른 Cat과 같은 타입으로 down cast를 하면 null을 가리키도록 함
 	//원본 타입인 Dog으로 down cast를 하면, 정상 출력함
+	//여기서 지금 "냐옹"을 출력하는데 nullptr이 정상인데, 정의되지 않은 동작을 하는 심각한 오류임
 	Cat* pc = dynamic_cast<Cat*>(pa); // c++11 style downcast (modern)
 	
 	cout << pa << " / " << pc << '\n';
