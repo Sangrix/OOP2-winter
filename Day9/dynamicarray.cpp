@@ -21,7 +21,8 @@ DynamicArray::~DynamicArray()
 void DynamicArray::setAt(int value, int index)
 {
 	if ((index < 0) || (index >= size)) {
-		throw 4885; // 정수를 throw
+		// throw 4885; // 정수를 throw
+		throw "인덱스의 범위를 벗어나 값을 할당할 수 없습니다. 4885\n";
 	}
 	cout << "힙 메모리 " << index << "번 위치의 값 " << value << "할당\n";
 	ptr[index] = value;
@@ -30,7 +31,8 @@ void DynamicArray::setAt(int value, int index)
 int DynamicArray::getAt(int index)
 {
 	if ((index < 0) || (index >= size)) {
-		throw 4886; // 정수를 throw
+		//throw 4886; // 정수를 throw
+		throw "인덱스의 범위를 벗어나 값을 꺼낼 수 없습니다. 4886\n";
 	}
 
 	return ptr[index];
