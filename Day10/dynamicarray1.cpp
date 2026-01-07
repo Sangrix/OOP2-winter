@@ -6,7 +6,7 @@ DynamicArray::DynamicArray()
 {
 }
 
-DynamicArray::DynamicArray(int size):size(size)
+DynamicArray::DynamicArray(int size) :size(size)
 {
 	try {
 		//this->size = size;
@@ -14,17 +14,22 @@ DynamicArray::DynamicArray(int size):size(size)
 		ptr = new int[size];
 		throw MyException(1000, "메모리 오류\n", this);
 		//cout << this << " 동적배열 객체를 생성. 힙메모리 할당\n";
+		cout << this << "이 부분은 실행 안됨!\n";
 	}
 	catch (...) {
 		delete[] ptr;
 		ptr = nullptr;
+		cout << this << "객체 생성 실패! 자원해제\n";
+		throw;
 	}
+	cout << "객체 생성 완료\n";
+
 }
 
 DynamicArray::~DynamicArray()
 {
 	cout << "동적배열 객체 소멸. 메모리를 정리합니다.\n";
-	delete[] ptr;
+	delete ptr;
 	ptr = nullptr;
 }
 
