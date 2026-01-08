@@ -15,17 +15,20 @@ public:
     void push(const T& element);
     T pop();
 };
+
 template<typename T>
 Stack<T>::Stack(int cap)
     : capacity(cap), size(0)
 {
     ptr = new T[capacity];
 }
+
 template<typename T>
 Stack<T>::~Stack()
 {
     delete[] ptr;
 }
+
 template<typename T>
 void Stack<T>::push(const T& element)
 {
@@ -40,6 +43,7 @@ void Stack<T>::push(const T& element)
         assert(false);
     }
 }
+
 template<typename T>
 T Stack<T>::pop()
 {
@@ -55,22 +59,32 @@ T Stack<T>::pop()
         assert(false);
     }
 }
+
 class Pokemon {
 public:
     int hp;
     Pokemon() :hp(1) {};
     Pokemon(int hp) : hp(hp) {};
 };
+
 ostream& operator<<(ostream& o, const Pokemon& pokemon) {
     o << pokemon.hp << '\n';
     return o;
 }
+
+typedef Stack<int> iStack;
+typedef Stack<Pokemon> pokemonStack;
 int main()
 {
     Pokemon pikachu(100);
     Pokemon squirtle(120);
-    Stack<int> stack(3);
-    Stack<Pokemon> jiwoo(4);
+
+   /* Stack<int> stack(3);
+    Stack<Pokemon> jiwoo(4);*/
+
+    iStack stack(3);
+    pokemonStack jiwoo(4);
+
     jiwoo.push(squirtle);
     jiwoo.push(pikachu);
     stack.push(7);
